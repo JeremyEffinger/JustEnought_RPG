@@ -2,7 +2,6 @@ import express, { json } from "express";
 import mongoose from "mongoose";
 import Character from "./characterSchema.js";
 import { check, validationResult } from "express-validator";
-import { ValidatorsImpl } from "express-validator/src/chain/validators-impl.js";
 
 mongoose.connect("mongodb://localhost:27017/characters", {
   useNewUrlParser: true,
