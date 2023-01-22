@@ -1,4 +1,4 @@
-import express, { json } from "express";
+import express from "express";
 import mongoose from "mongoose";
 import Character from "./characterSchema.js";
 import { check, validationResult } from "express-validator";
@@ -18,7 +18,7 @@ server.get("/api/v1", (req, res) => {
 });
 
 server.get("/api/v1/characters", (req, res) => {
-  Character.find({}, (err, characters) => {
+  Character.find({}, { characterName: 1 }, (err, characters) => {
     if (err) {
       res.status(500).send(err);
     } else {

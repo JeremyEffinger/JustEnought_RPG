@@ -18,7 +18,12 @@ function App() {
   return (
     <div className="App">
       <button onClick={getDataFromServer}>Access server using proxy</button>
-      <p>data : {data[0].characterName}</p>
+      <p>
+        data :
+        {data.map((character) => (
+          <li key={character._id}>{character.characterName}</li>
+        ))}
+      </p>
     </div>
   );
 }
