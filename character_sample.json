@@ -1,0 +1,100 @@
+{
+  "characterName": "Frodo Baggins",
+  "playerName": "John Smith",
+  "classes": [
+    { "name": "Thief", "level": 3 },
+    { "name": "Ranger", "level": 2 }
+  ],
+  "race": "Hobbit",
+  "type": "Heroic",
+  "upbringing": "Upper-class",
+  "disposition": "Brave",
+  "attributes": {
+    "might": 13,
+    "agility": 16,
+    "vitality": 12,
+    "intellect": 14,
+    "judgement": 10,
+    "personality": 8
+  },
+  "hitpoints": {
+    "current": 30,
+    "bonus": 5,
+    "max": 40
+  },
+  "armorRating": {
+    "current": 12,
+    "bonus": 3,
+    "source": {
+      "name": "Chain mail",
+      "type": "simple armor"
+    }
+  },
+  "rollBonus": 2,
+  "movement": [
+    { "type": "foot", "speed": 30 },
+    { "type": "horseback", "speed": 60 }
+  ],
+  "skills": [
+    { "skillName": "Stealth", "skilled": true, "mastered": false },
+    { "skillName": "Survival", "skilled": true, "mastered": false }
+  ],
+  "abilities": [
+    {
+      "name": "Silent Movement",
+      "description": "Can move quietly",
+      "source": "Thief class"
+    },
+    {
+      "name": "Tracking",
+      "description": "Can track creatures and people",
+      "source": "Ranger class"
+    }
+  ],
+  "spells": [
+    {
+      "name": "Invisibility",
+      "circle": 2,
+      "type": "illusion",
+      "description": "Makes the caster invisible",
+      "source": "Thief class"
+    },
+    {
+      "name": "Summon Wolf",
+      "circle": 3,
+      "type": "summoning",
+      "description": "Summons a wolf to fight for the caster",
+      "source": "Ranger class"
+    }
+  ],
+  "techniques": [
+    {
+      "name": "Backstab",
+      "art": "Thievery",
+      "type": "attack",
+      "description": "Deals extra damage when attacking from behind",
+      "source": "Thief class"
+    },
+    {
+      "name": "Rapid Shot",
+      "art": "Archery",
+      "type": "attack",
+      "description": "Allows the user to fire arrows quickly",
+      "source": "Ranger class"
+    }
+  ],
+  "inventory": [
+    {
+      "name": "Short sword",
+      "quantity": 1,
+      "weight": 2,
+      "description": "A short sword for close combat"
+    },
+    {
+      "name": "Longbow",
+      "quantity": 1,
+      "weight": 3,
+      "description": "A longbow for ranged combat"
+    }
+  ]
+}
