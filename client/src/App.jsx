@@ -3,8 +3,8 @@ import axios from "axios";
 import { useState } from "react";
 
 function App() {
-  const [data, setData] = useState("{}");
-  const urlWithProxy = "/api/v1";
+  const [data, setData] = useState("[]");
+  const urlWithProxy = "/api/v1/characters";
 
   function getDataFromServer() {
     axios
@@ -18,7 +18,7 @@ function App() {
   return (
     <div className="App">
       <button onClick={getDataFromServer}>Access server using proxy</button>
-      <p>data : {data.message}</p>
+      <p>data : {data[0].characterName}</p>
     </div>
   );
 }
