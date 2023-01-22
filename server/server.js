@@ -114,6 +114,31 @@ server.post(
   }
 );
 
+server.put("/api/v1/characters/:id", (req, res) => {
+  Character.findByIdAndUpdate(
+    req.params.id,
+    req.body,
+    { new: true },
+    (err, character) => {
+      if (err) {
+        res.status(500).send(err);
+      } else {
+        res.json(character);
+      }
+    }
+  );
+});
+
+server.delete("/api/v1/characters/:id", (req, res) => {
+  Character.findByIdAndRemove(req.params.id, (err) => {
+    if (err) {
+      res.status(500).send(err);
+    } else {
+      res.sendStatus(204);
+    }
+  });
+});
+
 server.use((req, res, next) => {
   res.contentType("text/plain").status(404).send("Not Found");
 });
