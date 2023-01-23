@@ -18,7 +18,7 @@ server.get("/api/v1", (req, res) => {
 });
 
 server.get("/api/v1/characters", (req, res) => {
-  Character.find({}, { characterName: 1 }, (err, characters) => {
+  Character.find({}, (err, characters) => {
     if (err) {
       res.status(500).send(err);
     } else {

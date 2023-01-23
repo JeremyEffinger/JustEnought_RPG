@@ -1,41 +1,111 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+.character-sheet {
+  color: #000000;
+  background-color: #f5deb3;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 20px 0;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.character-sheet-title {
+  font-size: 2em;
   text-align: center;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px #8b4513;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
-}
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.character-select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 2px solid #8b4513;
+  border-radius: 4px;
+  background-color: #f5deb3;
+  font-size: 16px;
+  outline: none;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.character-info-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.card {
-  padding: 2em;
+.character-name {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px #8b4513;
 }
 
-.read-the-docs {
-  color: #888;
+.character-player-name {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.character-race,
+.character-upbringing,
+.character-disposition {
+  font-size: 1.2em;
+  margin-bottom: 5px;
+  text-shadow: 2px 2px 4px #8b4513;
+}
+
+.character-attributes-title {
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px #8b4513;
+}
+
+.character-attributes-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.character-attribute {
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+}
+
+.character-hitpoints,
+.character-armor-rating,
+.character-roll-bonus,
+.character-movement,
+.character-skills,
+.character-abilities,
+.character-spells,
+.character-techniques,
+.character-inventory {
+  font-size: 1.2em;
+  margin-bottom: 10px;
+}
+
+.character-ability,
+.character-spell,
+.character-technique,
+.character-item {
+  font-size: 1.2em;
+  margin-right: 10px;
+  margin-bottom: 10px;
+}
+
+.character-ability {
+  color: #339966;
+}
+
+.character-spell {
+  color: #9966ff;
+}
+
+.character-technique {
+  color: #ff9900;
+}
+
+.character-item {
+  color: #666666;
 }
