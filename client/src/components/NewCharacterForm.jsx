@@ -41,57 +41,6 @@ const NewCharacterForm = () => {
     inventory: [],
   });
 
-  const handleAddSpell = (event) => {
-    event.preventDefault();
-    const newSpell = {
-      name: spellName,
-      circle: spellCircle,
-      type: spellType,
-      description: spellDescription,
-      source: spellSource,
-    };
-    setSpells([...spells, newSpell]);
-    setSpellName("");
-    setSpellCircle("");
-    setSpellType("");
-    setSpellDescription("");
-    setSpellSource("");
-  };
-
-  const handleAddTechnique = (event) => {
-    event.preventDefault();
-    const newTechnique = {
-      name: techniqueName,
-      art: techniqueArt,
-      type: techniqueType,
-      description: techniqueDescription,
-      source: techniqueSource,
-    };
-    setTechniques([...techniques, newTechnique]);
-    setTechniqueName("");
-    setTechniqueArt("");
-    setTechniqueType("");
-    setTechniqueDescription("");
-    setTechniqueSource("");
-  };
-  const handleAddAbility = (event) => {
-    event.preventDefault();
-    const newAbility = {
-      name: newAbilityName,
-      description: newAbilityDescription,
-      source: newAbilitySource,
-    };
-    setAbilities([...abilities, newAbility]);
-    setNewAbilityName("");
-    setNewAbilityDescription("");
-    setNewAbilitySource("");
-  };
-
-  const handleAddInventoryItem = (e) => {
-    e.preventDefault();
-    setInventory([...inventory, { itemName: "", itemDescription: "" }]);
-  };
-
   const handleChange = (e) => {
     setFormData(
       {
@@ -100,6 +49,14 @@ const NewCharacterForm = () => {
       },
       console.log(formData)
     );
+  };
+
+  const handleChangeArray = (e) => {
+    if (!formData[e.target.name]) {
+      formData[e.target.name] = [];
+    }
+    formData[e.target.name].push(e.target.value);
+    setFormData({ ...formData });
   };
 
   const handleSubmit = async (e) => {
@@ -138,8 +95,8 @@ const NewCharacterForm = () => {
         Class:
         <input
           type="text"
-          name="class"
-          value={formData.class}
+          name="classes"
+          value={formData.classes}
           onChange={handleChange}
         />
       </label>
@@ -273,7 +230,7 @@ const NewCharacterForm = () => {
           <input
             type="text"
             name="armorRating.source"
-            value={formData.armorRating.source}
+            value={formData.armorRating.source.name}
             onChange={handleChange}
           />
         </div>
@@ -308,7 +265,7 @@ const NewCharacterForm = () => {
               onChange={handleChange}
             />{" "}
             Mastered
-            <button type="button" onClick={(e) => handleChange(e)}>
+            <button type="button" onClick={null}>
               Add Skill
             </button>
           </div>
@@ -323,7 +280,7 @@ const NewCharacterForm = () => {
               placeholder="Spell Description"
             />
             <input type="text" name="source" placeholder="Source" />
-            <button type="button" onClick={(e) => handleAddSpell(e)}>
+            <button type="button" onClick={null}>
               Add Spell
             </button>
           </div>
@@ -336,7 +293,7 @@ const NewCharacterForm = () => {
               placeholder="Ability Description"
             />
             <input type="text" name="source" placeholder="Source" />
-            <button type="button" onClick={(e) => handleAddAbility(e)}>
+            <button type="button" onClick={null}>
               Add Ability
             </button>
             <label>Add Techniques:</label>
@@ -353,7 +310,7 @@ const NewCharacterForm = () => {
               placeholder="Technique Description"
             />
             <input type="text" name="source" placeholder="Source" />
-            <button type="button" onClick={(e) => handleAddTechnique(e)}>
+            <button type="button" onClick={null}>
               Add Technique
             </button>
           </div>
@@ -375,12 +332,10 @@ const NewCharacterForm = () => {
                   value={item.itemDescription}
                   onChange={(e) => handleInventoryChange(e, index)}
                 />
-                <button onClick={() => handleRemoveInventoryItem(index)}>
-                  Remove Item
-                </button>
+                <button onClick={null}>Remove Item</button>
               </div>
             ))}
-            <button onClick={handleAddInventoryItem}>Add Item</button>
+            <button oonClick={null}>Add Item</button>
           </div>
           <button
             type="submit"

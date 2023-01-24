@@ -7,8 +7,6 @@ import NewCharacterForm from "./components/NewCharacterForm";
 function App() {
   const [characters, setCharacters] = useState([]);
   const [selectedCharacter, setSelectedCharacter] = useState();
-  const [showNewCharacterForm, setShowNewCharacterForm] = useState(false);
-  const [createNewCharacter, setCreateNewCharacter] = useState(false);
   const [showForm, setShowForm] = useState(false);
 
   useEffect(() => {
@@ -18,10 +16,6 @@ function App() {
       .catch((error) => console.log(error));
   }, []);
 
-  useEffect(() => {
-    console.log(selectedCharacter);
-  }, [selectedCharacter]);
-
   const handleSelectCharacter = (characterId) => {
     if (characterId === "new") {
       setShowForm(true);
@@ -29,6 +23,7 @@ function App() {
       if (!characters.length) return;
       const selectedChar = characters.find((char) => char._id === characterId);
       setSelectedCharacter(selectedChar);
+      setShowForm(false);
     }
   };
 
@@ -50,7 +45,6 @@ function App() {
   const handleCreateCharacter = (newCharacter) => {
     setCharacters([...characters, newCharacter]);
     setSelectedCharacter(newCharacter);
-    setShowNewCharacterForm(false);
   };
 
   return (
