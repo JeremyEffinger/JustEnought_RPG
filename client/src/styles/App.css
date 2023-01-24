@@ -1,4 +1,4 @@
-.character-sheet {
+.character-info-container {
   color: #000000;
   background-color: #f5deb3;
   padding: 20px;
@@ -15,6 +15,7 @@
 }
 
 .character-select {
+  color: black;
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -27,7 +28,7 @@
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
-.character-info-container {
+.character-sheet {
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -65,23 +66,75 @@
   grid-template-columns: 1fr 1fr;
   grid-column-gap: 10px;
   grid-row-gap: 10px;
+  border: 1px solid black;
+  border-radius: 10px;
+  box-sizing: border-box;
 }
 
 .character-attribute {
+  font-weight: bold;
   font-size: 1.2em;
   font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
 }
 
-.character-hitpoints,
-.character-armor-rating,
-.character-roll-bonus,
-.character-movement,
-.character-skills,
-.character-abilities,
-.character-spells,
-.character-techniques,
-.character-inventory {
+.character-hitpoints {
+  margin-top: 10px;
+  font-weight: bold;
   font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 10px;
+}
+.character-armor-rating {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 10px;
+}
+
+.character-roll-bonus {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 10px;
+}
+
+.character-movement {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 10px;
+}
+.character-skills {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 10px;
+}
+.character-abilities {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 10px;
+}
+
+.character-spells {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 10px;
+}
+
+.character-techniques {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+  margin-bottom: 10px;
+}
+
+.character-inventory {
+  font-weight: bold;
+  font-size: 1.2em;
+  font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
   margin-bottom: 10px;
 }
 
@@ -108,4 +161,11 @@
 
 .character-item {
   color: #666666;
+}
+
+.delete-button {
+  display: inline-block;
+  font-size: 0.8em;
+  margin-left: 10px;
+  padding: 0.3em 0.3em;
 }
